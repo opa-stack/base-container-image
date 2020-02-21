@@ -1,0 +1,16 @@
+#!/bin/bash
+
+cd /build
+
+if [[ ${1} == "base" ]]; then
+  prefix="base/"
+else
+  prefix=""
+fi
+
+for f in ${prefix}*.sh; do
+  echo -e "\n************************ Running ${f} ************************"
+  sh -x ${f}
+  echo -e "************************ DONE ************************\n"
+done
+
